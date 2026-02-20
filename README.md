@@ -1,2 +1,2 @@
-# CS2450
+# 2450_Parking_System
 School
