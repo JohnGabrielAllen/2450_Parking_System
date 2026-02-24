@@ -1,5 +1,6 @@
 package parkingSystem;
 
+import java.util.Arrays;
 
 /**
  * This class represents a generic user for the ParkingSystem program.
@@ -36,7 +37,7 @@ public class User {
 	/**
 	 * The List of Cars registered to the User
 	 */
-	//private Array<Car> cars;
+	private Car[] cars;
 	/**
 	 * The level of access of the User
 	 * With 0 being a standard paying customer
@@ -77,6 +78,19 @@ public class User {
 	}
 	public String getFname() {
 		return fname;
+	}
+	/**
+	 * Adds a new car to the cars array
+	 * @param car is the new car to add to the User's Registered Cars
+	 */
+	public void addCar(Car car) {
+		Car[] tempArry = new Car[cars.length + 1]; // Create new array with room for new car
+		System.arraycopy(cars, 0, tempArry, 0, cars.length); //Copy old data
+		tempArry[cars.length] = car; //Add in new Car
+		cars = tempArry; //Copy new array to field
+	}
+	public Car[] getCars() {
+		return Arrays.copyOf(cars, cars.length);
 	}
 
 	//==================================
