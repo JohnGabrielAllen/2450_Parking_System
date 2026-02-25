@@ -65,7 +65,12 @@ public class User {
 		return phoneNum;
 	}
 	public void setPhoneNum(String phoneNum) {
-		this.phoneNum = phoneNum;
+		//Validate that data is in correct format
+		String regexStr = "^(1\\-)?[0-9]{3}\\-?[0-9]{3}\\-?[0-9]{4}$";
+		if (phoneNum.matches(regexStr)) {
+			this.phoneNum = phoneNum;
+		}//TODO: Need to  learn to throw errors.
+		
 	}
 	public int getAccessLevel() {
 		return accessLevel;
@@ -101,7 +106,7 @@ public class User {
 		this.address = address;
 		this.fname = fname;
 		this.lname = lname;
-		this.phoneNum = phoneNum;
+		setPhoneNum(phoneNum);
 		this.accessLevel = accessLevel;
 	}
 
