@@ -1,10 +1,5 @@
 package parkingSystem;
 
-public class User {
-
-}
-package parkingSystem;
-
 import java.util.Arrays;
 
 /**
